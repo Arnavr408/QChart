@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Stock Chart Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+
+<!-- Apple Touch Icons (for iOS home screen) -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Favicon.ico fallback -->
+<link rel="shortcut icon" href="favicon.ico">
+
+</head>
+<body>
+    <div id="home-container">
+        <h1>Enter Stock Symbol</h1>
+        <div id="input-container">
+            <input type="text" id="stock-symbol" placeholder="Symbol" maxlength="10">
+            <button id="submit-symbol">View Chart</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("submit-symbol").addEventListener("click", () => {
+            const stockSymbol = document.getElementById("stock-symbol").value.trim().toUpperCase();
+            if (stockSymbol) {
+                window.location.href = `home.html?symbol=${stockSymbol}`;
+            }
+        });
+
+        document.getElementById("stock-symbol").addEventListener("input", function () {
+            this.value = this.value.toUpperCase();
+        });
+    </script>
+    <script>
+if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"))
+        .catch((error) => console.log("Service Worker Registration Failed", error));
+}
+</script>
+</body>
+</html>
