@@ -1,0 +1,191 @@
+/* General body styles */
+body {
+    margin: 0;
+    background: black;
+    color: white;
+    font-family: 'SF Pro Rounded', Arial, sans-serif;
+    text-align: center;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes at least the full viewport height */
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    flex: 1; /* Allow container to grow and push footer to the bottom */
+    padding-top: 20px;
+}
+
+/* Header */
+h1 {
+    font-size: 56px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+    top: -54px;
+}
+
+/* Input and Buttons */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    top: -56px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #444;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #666;
+}
+
+/* Chart & Clock Layout */
+.chart-clock-container {
+    display: flex;
+    align-items: stretch; /* Make clock and chart match height */
+    justify-content: center;
+    gap: 20px;
+    width: 90vw;
+    max-width: 1200px;
+    height: 600px; /* Increased height for chart and clock */
+}
+
+/* Chart */
+.chart-container {
+    flex: 1;
+    min-width: 800px;
+    height: 100%; /* Match height of container */
+}
+
+/* Clock */
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 160px;
+    height: 100%; /* Match height of container */
+    background: rgba(255, 255, 255, 0.1); /* Optional: Add background for better visibility */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.clock-hours {
+    font-size: 100px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.clock-minutes {
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.clock-ampm {
+    font-size: 40px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.date {
+    font-size: 30px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 20px;
+}
+
+/* Hide/Show Clock Button */
+#toggle-clock {
+    margin-left: 10px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background: black;
+    color: white;
+    font-size: 14px;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Responsive Design for Mobile Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+        top: -20px;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        top: -20px;
+    }
+
+    .chart-clock-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        height: auto; /* Allow height to adjust on mobile */
+    }
+
+    .chart-container {
+        min-width: 90vw;
+        height: 400px; /* Smaller height for mobile */
+    }
+
+    .clock-container {
+        width: 90vw;
+        height: auto; /* Allow height to adjust on mobile */
+        padding: 10px;
+    }
+
+    .clock-hours {
+        font-size: 60px; /* Smaller font size for mobile */
+    }
+
+    .clock-minutes {
+        font-size: 50px; /* Smaller font size for mobile */
+    }
+
+    .clock-ampm {
+        font-size: 24px; /* Smaller font size for mobile */
+    }
+
+    .date {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+}
