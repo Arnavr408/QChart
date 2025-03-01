@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://qchart.netlify.app/sitemap.xml
