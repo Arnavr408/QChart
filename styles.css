@@ -3,7 +3,7 @@ body {
     margin: 0;
     background: black;
     color: white;
-    font-family: 'SF Pro Rounded', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Rounded', 'SF Pro Display', Arial, sans-serif;
     text-align: center;
     overflow-x: hidden;
     display: flex;
@@ -18,7 +18,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     width: 100vw;
-    flex: 1; /* Allow container to grow and push footer to the bottom */
+    flex: 1;
     padding-top: 20px;
 }
 
@@ -56,6 +56,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.2s ease; /* Smooth hover effect */
 }
 
 button:hover {
@@ -187,5 +188,18 @@ footer {
 
     .date {
         font-size: 20px; /* Smaller font size for mobile */
+    }
+}
+
+/* Faster button responsiveness on mobile */
+button {
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+    user-select: none; /* Prevent text selection on buttons */
+}
+
+/* Improve touch responsiveness */
+@media (hover: none) and (pointer: coarse) {
+    button {
+        padding: 12px 18px; /* Slightly larger buttons for touch devices */
     }
 }
